@@ -1,6 +1,583 @@
-<h2>Pixee AI - Privacy Policy</h2>
-<p>Pixee AI Photo Editor does not collect or store any personal information. 
-All photo edits are processed locally on your device. 
-No login or account data is required. Temporary cache data may be automatically deleted within 90 days.</p>
-<p>For any data deletion or concerns, uninstalling the app removes all data from your device.</p>
-<p>Last updated: October 2025</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pixee AI — App Policy</title>
+  <meta name="description" content="Privacy Policy, Terms of Use, and AI content & data safety policy for Pixee AI by Decentralized System Developers." />
+  <style>
+    :root {
+      /* Color palette from Pixee AI app */
+      --primary-50: #F3E8FF;
+      --primary-100: #E9D5FF;
+      --primary-200: #D8B4FE;
+      --primary-300: #C084FC;
+      --primary-400: #A855F7;
+      --primary-500: #9B45F8; /* Main purple from logo */
+      --primary-600: #9333EA;
+      --primary-700: #7C3AED;
+      --primary-800: #6B21A8;
+      --primary-900: #581C87;
+      
+      --secondary-50: #FEF2F2;
+      --secondary-100: #FEE2E2;
+      --secondary-200: #FECACA;
+      --secondary-300: #FCA5A5;
+      --secondary-400: #F87171;
+      --secondary-500: #F7716F; /* Main peach from logo */
+      --secondary-600: #DC2626;
+      --secondary-700: #B91C1C;
+      --secondary-800: #991B1B;
+      --secondary-900: #7F1D1D;
+      
+      --neutral-50: #FAFAFA;
+      --neutral-100: #F4F4F5;
+      --neutral-200: #E4E4E7;
+      --neutral-300: #D4D4D8;
+      --neutral-400: #A1A1AA;
+      --neutral-500: #71717A;
+      --neutral-600: #52525B;
+      --neutral-700: #3F3F46;
+      --neutral-800: #27272A;
+      --neutral-900: #18181B;
+      
+      --bg: var(--neutral-50);
+      --card: #FFFFFF;
+      --text-primary: var(--neutral-900);
+      --text-secondary: var(--neutral-600);
+      --text-tertiary: var(--neutral-400);
+      --surface: var(--neutral-100);
+      --accent: var(--primary-500);
+      
+      --max-w: 900px;
+      --border-radius: 16px;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.03);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.05);
+      
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header with gradient */
+    .header {
+      background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-700) 100%);
+      color: white;
+      padding: 48px 0;
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.2;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      letter-spacing: -0.5px;
+    }
+    
+    .tagline {
+      font-size: 18px;
+      font-weight: 500;
+      opacity: 0.9;
+      margin-bottom: 4px;
+    }
+    
+    .subtitle {
+      font-size: 16px;
+      opacity: 0.8;
+      margin-bottom: 24px;
+    }
+    
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    
+    .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 14px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .last-updated {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    /* Main content card */
+    .main-card {
+      background: var(--card);
+      border-radius: var(--border-radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 32px;
+    }
+    
+    /* Navigation */
+    .nav-container {
+      margin-bottom: 24px;
+      position: sticky;
+      top: 0;
+      background: var(--card);
+      padding: 16px 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--neutral-200);
+    }
+    
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    
+    nav a {
+      color: var(--primary-500);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 12px;
+      background: var(--primary-50);
+      transition: all 0.2s ease;
+    }
+    
+    nav a:hover {
+      background: var(--primary-100);
+      transform: translateY(-2px);
+    }
+    
+    /* Sections */
+    section {
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--neutral-200);
+    }
+    
+    section:last-of-type {
+      border-bottom: none;
+    }
+    
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 20px;
+      background: var(--primary-500);
+      border-radius: 2px;
+    }
+    
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    
+    ul {
+      color: var(--text-secondary);
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    
+    li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    
+    /* Feature highlights */
+    .feature-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    
+    .feature-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px;
+      border-left: 4px solid var(--primary-500);
+    }
+    
+    .feature-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+    
+    .feature-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    
+    /* Contact section */
+    .contact-card {
+      background: linear-gradient(135deg, var(--primary-50) 0%, var(--secondary-50) 100%);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+    
+    .mail-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-500);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 8px 16px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+    }
+    
+    .mail-link:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--neutral-200);
+      color: var(--text-tertiary);
+      font-size: 14px;
+    }
+    
+    footer strong {
+      color: var(--text-secondary);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header {
+        padding: 32px 0;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+      }
+      
+      h1 {
+        font-size: 28px;
+      }
+      
+      .tagline {
+        font-size: 16px;
+      }
+      
+      .main-card {
+        padding: 24px;
+      }
+      
+      nav {
+        gap: 8px;
+      }
+      
+      nav a {
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+      
+      .feature-highlights {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+      
+      .header {
+        padding: 24px 0;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+      
+      .main-card {
+        padding: 20px;
+      }
+      
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1>Pixee AI — App Policy</h1>
+        <div class="tagline">Your Pics SuperCharger</div>
+        <div class="subtitle">Privacy, Terms, and AI Safety Guidelines</div>
+        <div class="meta">
+          <span class="badge">Developer</span> Decentralized System Developers
+          <span class="last-updated">Last Updated: October 27, 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="main-card">
+      <div class="nav-container">
+        <nav aria-label="Table of contents">
+          <a href="#intro">Introduction</a>
+          <a href="#features">Features</a>
+          <a href="#accounts">User Accounts</a>
+          <a href="#data">Data Collection</a>
+          <a href="#ai-disclaimer">AI Content</a>
+          <a href="#responsibility">Content Responsibility</a>
+          <a href="#kids">Children</a>
+          <a href="#retention">Data Retention</a>
+          <a href="#thirdparty">Third-Party Services</a>
+          <a href="#ip">Intellectual Property</a>
+          <a href="#liability">Limitation of Liability</a>
+          <a href="#security">Data Security</a>
+          <a href="#changes">Changes</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <section id="intro">
+        <h2>1. Introduction</h2>
+        <p>Welcome to <strong>Pixee AI</strong>. Pixee AI is an AI-powered photo editor and art generator that helps users create, enhance, and transform images with AI tools. This page explains how Pixee AI handles data, generated content, and the responsibilities of users and the developer.</p>
+      </section>
+
+      <section id="features">
+        <h2>2. App Features</h2>
+        <p>Pixee AI includes the following AI-powered tools:</p>
+        <div class="feature-highlights">
+          <div class="feature-card">
+            <div class="feature-title">Background Remover</div>
+            <div class="feature-desc">Remove or replace backgrounds instantly</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-title">AI Enhancer</div>
+            <div class="feature-desc">Improve clarity, color, and detail</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-title">Magic Eraser</div>
+            <div class="feature-desc">Remove unwanted objects</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-title">Avatar Creator</div>
+            <div class="feature-desc">Generate stylized avatars</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-title">Text to Image</div>
+            <div class="feature-desc">Create images from text prompts</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-title">Upscale</div>
+            <div class="feature-desc">Increase image resolution</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-title">Style Transfer</div>
+            <div class="feature-desc">Apply artistic filters or styles</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-title">Mockup Generator</div>
+            <div class="feature-desc">Place images into templates/mockups</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="accounts">
+        <h2>3. User Accounts</h2>
+        <p>Pixee AI does <strong>not</strong> require user registration, login, or personal identification. All features are available without creating an account.</p>
+      </section>
+
+      <section id="data">
+        <h2>4. Data Collection & Storage</h2>
+        <p><strong>Uploaded images:</strong> Images you upload are processed on our servers to perform the requested AI task. Uploaded and generated images are <strong>automatically deleted within 1 hour</strong> of processing completion.</p>
+        <p><strong>Non-personal data:</strong> We may collect limited non-identifiable data to operate and improve the app, such as:</p>
+        <ul>
+          <li>Device type and operating system</li>
+          <li>App version and usage logs</li>
+          <li>Anonymous crash reports and analytics</li>
+        </ul>
+        <p><strong>Advertising data:</strong> Pixee AI displays ads using Google AdMob. Ad networks may collect anonymized identifiers (e.g., device IDs) to serve relevant ads. For details, see Google's ad policies and privacy documentation.</p>
+      </section>
+
+      <section id="ai-disclaimer">
+        <h2>5. AI Content Disclaimer</h2>
+        <p>Pixee AI uses AI models to generate image results. These outputs are model predictions and may not always match user input or expectations. We do not guarantee visual accuracy or specific outcomes. Users may regenerate or edit results if unsatisfied.</p>
+      </section>
+
+      <section id="responsibility">
+        <h2>6. Content Responsibility</h2>
+        <p>Users are responsible for any content they upload or create. You agree not to use Pixee AI to produce or distribute material that is:</p>
+        <ul>
+          <li>Pornographic, sexual, or exploitative content involving minors</li>
+          <li>Hateful, harassing, or violent content</li>
+          <li>Copyright-infringing or trademark-infringing content</li>
+          <li>Defamatory or an invasion of another person's privacy</li>
+        </ul>
+        <p>We reserve the right to restrict features, block IPs, or remove outputs that violate these rules or applicable laws.</p>
+      </section>
+
+      <section id="kids">
+        <h2>7. Children's Privacy</h2>
+        <p>Pixee AI is not directed at children under 13. We do not knowingly collect personal information from children. If we discover that we have inadvertently collected personal data from a child under 13, we will promptly delete that data.</p>
+      </section>
+
+      <section id="retention">
+        <h2>8. Data Retention</h2>
+        <p>All uploaded and generated images are deleted automatically after <strong>1 hour</strong>. Non-personal system logs and analytics may be retained for up to 30 days to diagnose issues and improve the app.</p>
+      </section>
+
+      <section id="thirdparty">
+        <h2>9. Third-Party Services</h2>
+        <p>Pixee AI uses third-party services to provide functionality, including but not limited to:</p>
+        <ul>
+          <li>Google AdMob — ad delivery and ad analytics</li>
+          <li>React Native / Expo libraries — app UI and native functionality</li>
+          <li>AI processing services or libraries — model inference and image transforms</li>
+        </ul>
+        <p>Each third party has its own privacy and terms. We encourage you to review any third party's policies before use.</p>
+      </section>
+
+      <section id="ip">
+        <h2>10. Intellectual Property</h2>
+        <p>Users retain rights to images they create with Pixee AI for personal and commercial use subject to third-party rights and laws. The app code, logos, and branding are owned by Decentralized System Developers.</p>
+      </section>
+
+      <section id="liability">
+        <h2>11. Limitation of Liability</h2>
+        <p>Pixee AI is provided "as is." Decentralized System Developers makes no warranties regarding the accuracy, reliability, or fitness of AI-generated content. We are not liable for any damages, losses, or claims arising from use or misuse of the app or generated content.</p>
+      </section>
+
+      <section id="security">
+        <h2>12. Data Security</h2>
+        <p>We use encrypted connections (HTTPS) for data transfer and standard security best practices to protect uploaded content. However, no system is completely secure. Do not upload highly sensitive or confidential images.</p>
+      </section>
+
+      <section id="changes">
+        <h2>13. Changes to This Policy</h2>
+        <p>We may update this policy occasionally. The most recent version will be posted here and inside the app. Continued use after changes constitute acceptance of the revised policy.</p>
+      </section>
+
+      <section id="contact">
+        <h2>14. Contact & Support</h2>
+        <p>If you have questions, concerns, or requests related to this policy or data handling, contact us at:</p>
+        <div class="contact-card">
+          <a class="mail-link" href="mailto:support@yourdomain.com">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            pixeeaiapp.com
+          </a>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14px;">Replace the above address with your real support email when available.</p>
+        </div>
+      </section>
+
+      <footer>
+        <p>© <strong>Decentralized System Developers</strong> — Pixee AI. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Highlight active section in navigation
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav a');
+      
+      let currentSection = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          currentSection = '#' + section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === currentSection) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
