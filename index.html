@@ -153,21 +153,45 @@
       margin-bottom: 32px;
     }
     
-    /* Navigation */
+    /* Mobile-first navigation */
     .nav-container {
       margin-bottom: 24px;
-      position: sticky;
-      top: 0;
       background: var(--card);
-      padding: 16px 0;
-      z-index: 10;
-      border-bottom: 1px solid var(--neutral-200);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .nav-toggle {
+      display: none;
+    }
+    
+    .nav-toggle-label {
+      display: none;
+      padding: 16px 20px;
+      background: var(--primary-500);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-toggle-label span {
+      font-size: 14px;
+    }
+    
+    .nav-toggle-label::after {
+      content: '▼';
+      font-size: 12px;
+      transition: transform 0.3s ease;
     }
     
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 8px;
+      padding: 20px;
     }
     
     nav a {
@@ -175,13 +199,16 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 12px;
+      padding: 10px 16px;
+      border-radius: 10px;
       background: var(--primary-50);
       transition: all 0.2s ease;
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
     }
     
-    nav a:hover {
+    nav a:hover, nav a.active {
       background: var(--primary-100);
       transform: translateY(-2px);
     }
@@ -325,13 +352,34 @@
         padding: 24px;
       }
       
+      /* Mobile navigation */
+      .nav-toggle-label {
+        display: flex;
+      }
+      
       nav {
-        gap: 8px;
+        display: none;
+        flex-direction: column;
+        padding: 0;
       }
       
       nav a {
-        padding: 6px 12px;
-        font-size: 13px;
+        border-radius: 0;
+        padding: 14px 20px;
+        text-align: left;
+        border-bottom: 1px solid var(--neutral-200);
+      }
+      
+      nav a:last-child {
+        border-bottom: none;
+      }
+      
+      .nav-toggle:checked ~ nav {
+        display: flex;
+      }
+      
+      .nav-toggle:checked + .nav-toggle-label::after {
+        transform: rotate(180deg);
       }
       
       .feature-highlights {
@@ -355,10 +403,6 @@
       .main-card {
         padding: 20px;
       }
-      
-      nav {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
@@ -380,6 +424,11 @@
   <div class="container">
     <div class="main-card">
       <div class="nav-container">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span>Table of Contents</span>
+        </label>
+        
         <nav aria-label="Table of contents">
           <a href="#intro">Introduction</a>
           <a href="#features">Features</a>
@@ -545,6 +594,9 @@
         e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
+        
+        // Close mobile nav after clicking
+        document.getElementById('nav-toggle').checked = false;
         
         if (targetElement) {
           window.scrollTo({
